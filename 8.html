@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dulce Encanto - Pastel de Piña Colada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+      color: #5d4037;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3rem;
+      color: #d84315;
+      box-shadow: 0 4px 15px rgba(194, 100, 0, 0.3);
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(255, 112, 67, 0.3);
+      max-width: 500px;
+      width: 100%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      padding-bottom: 30px;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px rgba(255, 87, 34, 0.45);
+    }
+
+    .precio-superior {
+      background-color: #ffe0b2;
+      color: #e64a19;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      font-family: 'Playfair Display', serif;
+      border-bottom: 2px solid #d84315;
+    }
+
+    .producto img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-bottom: 8px solid #d84315;
+      transition: transform 0.4s ease;
+    }
+
+    .producto:hover img {
+      transform: scale(1.1);
+      filter: brightness(0.9);
+    }
+
+    .contenido {
+      padding: 30px 25px;
+      text-align: center;
+    }
+
+    .contenido h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #bf360c;
+    }
+
+    .contenido p.descripcion {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #5d4037;
+      margin-bottom: 20px;
+      font-style: italic;
+      white-space: pre-line;
+    }
+
+    .contenido ul {
+      list-style: none;
+      padding: 0 40px;
+      margin-bottom: 25px;
+      color: #6d4c41;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .contenido ul li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .contenido ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #ef6c00;
+      font-weight: bold;
+    }
+
+    .btn-comprar, .btn-volver {
+      background-color: #d84315;
+      border: none;
+      padding: 15px 40px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(230, 81, 0, 0.4);
+      transition: background-color 0.3s ease;
+      margin: 0 10px;
+      user-select: none;
+    }
+
+    .btn-comprar:hover, .btn-volver:hover {
+      background-color: #bf360c;
+      box-shadow: 0 8px 20px rgba(191, 54, 12, 0.6);
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffe0b2;
+      color: #d84315;
+      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      user-select: none;
+      box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <header>Pastelería Dulce Encanto</header>
+
+  <main>
+    <article class="producto" aria-label="Pastel de Piña Colada">
+      <img src="Pi.jpeg" alt="Pastel de Piña Colada decorado con coco y cereza" />
+      <div class="contenido">
+        <h2>Pastel de Piña Colada</h2>
+        <p class="descripcion">
+          El pastel de piña colada es un postre que captura los sabores tropicales del cóctel clásico. 
+          Generalmente, se compone de un bizcocho suave y esponjoso, a menudo bañado en un almíbar de ron. 
+          El relleno combina crema y trozos de piña, con coco rallado opcional. 
+          Suele decorarse con crema batida, coco rallado y cerezas marrasquino.
+        </p>
+        <ul>
+<li>Precio:$290</li>
+          <li>Sabor tropical de piña y coco con un toque de ron</li>
+          <li>Bizcocho suave y húmedo</li>
+          <li>Relleno cremoso con piña en trozos</li>
+          <li>Cobertura de crema batida y coco rallado</li>
+          <li>Decoración con cerezas marrasquino</li>
+          <li>Puede incluir almíbar de ron y tres leches</li>
+          <li>Ideal para quienes buscan un postre refrescante</li>
+        </ul>
+        <div class="botones">
+          <button class="btn-comprar" onclick="alert('¡Agregaste el Pastel de Piña Colada al carrito!')">Agregar al carrito</button>
+          <button class="btn-volver" onclick="window.location.href='2.html'">Volver al catálogo</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>&copy; 2025 Dulce Encanto </footer>
+
+</body>
+</html>

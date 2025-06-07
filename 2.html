@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pastelería Dulce Encanto</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf6f9;
+      color: #4e342e;
+    }
+
+    header {
+      background-color: #8e44ad;
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #af7ac5;
+      text-align: center;
+      padding: 1em 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f8c6e9;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      border-left: 5px solid #ba68c8;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      color: #6a1b9a;
+    }
+
+    /* Diseño femenino para el registro */
+    #registro {
+      background: linear-gradient(to right, #fce4ec, #f8bbd0);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(255, 192, 203, 0.4);
+      color: #880e4f;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    #registro h2 {
+      color: #ad1457;
+      font-size: 1.8em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #registro form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    #registro input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #f48fb1;
+      font-size: 1em;
+      background-color: #fff0f5;
+      transition: border 0.3s;
+    }
+
+    #registro input:focus {
+      border: 2px solid #ec407a;
+      outline: none;
+    }
+
+    #registro button {
+      background-color: #ec407a;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #registro button:hover {
+      background-color: #c2185b;
+    }
+
+    .productos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .producto {
+      background: #fff3f7;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .producto:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 15px rgba(255, 77, 148, 0.3);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain; /* Aquí cambié cover por contain */
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .carrito, #contacto {
+      background-color: #fef7fa;
+      border: 1px solid #dcdcdc;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .btn-eliminar {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #8e44ad;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 40px;
+    }
+
+    /* Nuevo estilo para filtro de categorías */
+    #filtro-categorias {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    #filtro-categorias label {
+      font-weight: 600;
+      color: #6a1b9a;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    #categoria-select {
+      padding: 8px 15px;
+      border-radius: 8px;
+      border: 2px solid #ba68c8;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    #categoria-select:hover, #categoria-select:focus {
+      border-color: #8e44ad;
+      outline: none;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <IMG SRC="02.JPEG" width="220" height="140" ALIGN="LEFT" alt="Logo Dulce Encanto">
+  <h1>Dulce Encanto</h1>
+  <p>Bienvenidos a Dulce Encanto, donde cada pastel es un momento especial. Ofrecemos una amplia variedad de opciones para todos los gustos y necesidades</p>
+</header>
+
+<nav>
+  <a href="#registro">Registro</a>
+  <a href="#productos">Catálogo</a>
+  <a href="#carrito">Carrito</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="registro">
+  <h2>Registro de Usuario</h2>
+  <form onsubmit="guardarRegistro(event)">
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <input type="email" id="correo" placeholder="Correo electrónico" required>
+    <input type="password" id="contrasena" placeholder="Contraseña" required>
+    <button type="submit">Registrarse</button>
+  </form>
+</section>
+
+<section id="productos">
+  <h2>Catálogo de Pasteles</h2>
+
+  <!-- Filtro por categoría -->
+  <div id="filtro-categorias">
+    <label for="categoria-select">Filtrar por categoría:</label>
+    <select id="categoria-select" onchange="filtrarPorCategoria()">
+      <option value="todos">Todos</option>
+      <option value="clasicos">Clásicos</option>
+      <option value="especiales">Especiales</option>
+      <option value="veganos">Veganos</option>
+      <option value="mini">Mini Pasteles</option>
+    </select>
+  </div>
+
+  <div class="productos-container">
+    <div class="producto" data-categoria="clasicos">
+      <a href="3.html"><img src="C.jpeg" alt="Pastel Chocolate"></a>
+      <h3>Pastel de Chocolate</h3>
+      <p>$250</p>
+      <button onclick="agregarAlCarrito('Pastel de Chocolate', 250)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="especiales">
+      <a href="4.html"><img src="FR.jpeg" alt="Pastel"></a>
+      <h3>Pastel de Frutos rojos</h3>
+      <p>$230</p>
+      <button onclick="agregarAlCarrito('Pastel de Frutos rojos', 230)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="clasicos">
+      <a href="5.html"><img src="3L.jpeg" alt="Pastel"></a>
+      <h3>Pastel de 3 leches</h3>
+      <p>$240</p>
+      <button onclick="agregarAlCarrito('Pastel de 3 leches', 240)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="especiales">
+      <a href="6.html"><img src="Red.jpeg" alt="Pastel"></a>
+      <h3>Pastel red velvet</h3>
+      <p>$270</p>
+      <button onclick="agregarAlCarrito('Pastel red velvet', 270)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="clasicos">
+      <a href="7.html"><img src="0.jpeg" alt="pastel"></a>
+      <h3>Pastel de zanahoria</h3>
+      <p>$280</p>
+      <button onclick="agregarAlCarrito('Pastel de zanahoria', 280)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="especiales">
+      <a href="8.html"><img src="Pi.jpeg" alt="pastel"></a>
+      <h3>Pastel de piña colada</h3>
+      <p>$290</p>
+      <button onclick="agregarAlCarrito('Pastel de piña colada', 290)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="clasicos">
+      <a href="9.html"><img src="Q.jpeg" alt="pastel"></a>
+      <h3>Pastel de queso</h3>
+      <p>$260</p>
+      <button onclick="agregarAlCarrito('Pastel de queso', 260)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="especiales">
+      <a href="10.html"><img src="Ferrero.jpeg" alt="Pastel"></a>
+      <h3>Pastel de Ferrero Rocher</h3>
+      <p>$240</p>
+      <button onclick="agregarAlCarrito('Pastel de Ferrero Rocher', 240)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="veganos">
+      <a href="11.html"><img src="Ve.jpeg" alt="Pastel"></a>
+      <h3>Pastel Vegano</h3>
+      <p>$250</p>
+      <button onclick="agregarAlCarrito('Pastel Vegano', 250)">Agregar al carrito</button>
+    </div>
+    <div class="producto" data-categoria="mini">
+      <a href="12.html"><img src="r.jpeg" alt="Pastel"></a>
+      <h3>Pastelillo rossyrya</h3>
+      <p>$50</p>
+      <button onclick="agregarAlCarrito('Pastelillo rossyrya', 50)">Agregar al carrito</button>
+    </div>
+  </div>
+</section>
+
+<section id="carrito" class="carrito">
+  <h2>Carrito de Compras</h2>
+  <ul id="lista-carrito"></ul>
+  <p id="total-carrito">Total: $0</p>
+  <button onclick="vaciarCarrito()">Vaciar carrito</button>
+</section>
+
+      <section class="social-media">
+        <h2>Redes Sociales</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/share/19C2Vkz6MU/" target="_blank">📘 Facebook</a></li>
+          <li><a href="https://whatsapp.com/channel/0029Vb5dsdo2phHHLyIqiF1m" target="_blank">📱 WhatsApp</a></li>
+         <li><a href="tel:+522942491349">📞 +52 294 249 1349</a></li>
+<li>✉️dulceencanto687@gmail.com </li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+<footer>
+  <p>© 2025 Dulce Encanto. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Función para guardar el registro (solo muestra un alert para demo)
+  function guardarRegistro(event) {
+    event.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    alert('Registro exitoso, bienvenido/a ' + nombre + '!');
+    // Aquí podrías agregar lógica para enviar datos al servidor o guardarlos localmente
+  }
+
+  // Agregar productos al carrito
+  const carrito = [];
+
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({nombre, precio});
+    actualizarCarrito();
+  }
+
+  function actualizarCarrito() {
+    const lista = document.getElementById('lista-carrito');
+    lista.innerHTML = '';
+    let total = 0;
+    carrito.forEach((item, index) => {
+      total += item.precio;
+      const li = document.createElement('li');
+      li.textContent = item.nombre + ' - $' + item.precio;
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'X';
+      btnEliminar.classList.add('btn-eliminar');
+      btnEliminar.onclick = () => {
+        carrito.splice(index, 1);
+        actualizarCarrito();
+      };
+      li.appendChild(btnEliminar);
+      lista.appendChild(li);
+    });
+    document.getElementById('total-carrito').textContent = 'Total: $' + total;
+  }
+
+  function vaciarCarrito() {
+    carrito.length = 0;
+    actualizarCarrito();
+  }
+
+  // Función para filtrar productos por categoría
+  function filtrarPorCategoria() {
+    const categoria = document.getElementById('categoria-select').value;
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(producto => {
+      if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+        producto.style.display = 'block';
+      } else {
+        producto.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

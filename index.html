@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dulce Encanto - Bienvenida</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2c0735 0%, #6b1e58 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #f9e7f0;
+      overflow: hidden;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Logo gigante */
+    .logo-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin-bottom: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #f06292 0%, #880e4f 70%);
+      box-shadow:
+        0 0 30px #ff9cc1,
+        0 0 60px #ff4d94,
+        0 0 90px #ff1a75;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: pulseGlow 3s infinite ease-in-out;
+      cursor: default;
+    }
+
+    .logo-container img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px #ff66a3);
+      border-radius: 50%;
+      transition: transform 0.5s ease;
+    }
+
+    .logo-container:hover img {
+      transform: scale(1.1) rotate(-5deg);
+      filter: drop-shadow(0 0 20px #ff4d94);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 4rem;
+      margin-bottom: 15px;
+      color: #ffc0d3;
+      text-shadow: 2px 2px 6px #6b1e58;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    p {
+      font-size: 1.4rem;
+      max-width: 480px;
+      margin: 0 auto 50px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #ffb4cc;
+      text-shadow: 1px 1px 3px #4a002b;
+      animation: fadeInUp 2s ease forwards;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #ff4d94 0%, #f06292 100%);
+      padding: 22px 70px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(255, 77, 148, 0.8);
+      color: white;
+      text-decoration: none;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      animation: fadeInUp 2.5s ease forwards;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #f06292 0%, #ff4d94 100%);
+      box-shadow: 0 12px 40px rgba(240, 98, 146, 1);
+      transform: translateY(-6px);
+    }
+
+    /* Animaciones */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow:
+          0 0 30px #ff9cc1,
+          0 0 60px #ff4d94,
+          0 0 90px #ff1a75;
+      }
+      50% {
+        box-shadow:
+          0 0 40px #ff9cc1,
+          0 0 80px #ff4d94,
+          0 0 120px #ff1a75;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .logo-container {
+        width: 220px;
+        height: 220px;
+      }
+      .logo-container img {
+        width: 140px;
+        height: 140px;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.1rem;
+        max-width: 90%;
+        margin-bottom: 30px;
+      }
+      .btn {
+        padding: 18px 50px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container" aria-label="Logotipo de Dulce Encanto">
+    <img src="02.jpeg" alt="Logo de Dulce Encanto" />
+  </div>
+  <h1>Dulce Encanto</h1>
+  <p>Deleita tu paladar con nuestros pasteles artesanales, creados con amor y los mejores ingredientes para cada ocasión especial.</p>
+  <a href="2.html" class="btn">Ver Catálogo</a>
+</body>
+</html>
+
